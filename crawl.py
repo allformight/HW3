@@ -88,7 +88,7 @@ def crawl(address):
     # print(linklist[0])
     while linklist:
         link = linklist.pop(0)
-        print(link)
+        # print(link)
         done.append(link)
         findemails(link)                
         findlinks(link)
