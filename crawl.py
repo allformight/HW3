@@ -96,8 +96,14 @@ def crawl(address):
 
 
         
-
-crawl(address)
+if __name__ == '__main__':
+    parse = argparse.ArgumentParser()
+    parse.add_argument('address',help="Input your web site.",type=str)        
+    args = parse.parse_args()
+    if args.address[0:4] != 'http':
+        args.address = 'http://' + args.address
+    function = crawl(args.address)
+    function()
 
 # threading.Thread(target = recursive,args = (address,)).start()
 # threading.Thread(target = printe,args = ()).start()
